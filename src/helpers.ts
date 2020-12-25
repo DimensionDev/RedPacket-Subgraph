@@ -1,12 +1,17 @@
 import { BigInt, Address, log } from "@graphprotocol/graph-ts";
-import { CHAIN_ID, TOKEN_TYPE_ETHER, TOKEN_TYPE_ERC20 } from "./constants";
+import {
+  CHAIN_ID,
+  TOKEN_TYPE_ETHER,
+  TOKEN_TYPE_ERC20,
+  ETH_ADDR,
+} from "./constants";
 import { ERC20 } from "../generated/RedPacket/ERC20";
 import { ERC20NameBytes } from "../generated/RedPacket/ERC20NameBytes";
 import { ERC20SymbolBytes } from "../generated/RedPacket/ERC20SymbolBytes";
 import { Token } from "../generated/schema";
 
 export function isEth(value: string): boolean {
-  return value == "0x0000000000000000000000000000000000000000";
+  return value == ETH_ADDR;
 }
 
 export function isNullEthValue(value: string): boolean {

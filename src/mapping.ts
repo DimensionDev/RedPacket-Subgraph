@@ -12,7 +12,12 @@ import {
   RedPacket,
   RedPacketInfo,
 } from "../generated/schema";
-import { CHAIN_ID, CONTRACT_ADDR } from "./constants";
+import {
+  CHAIN_ID,
+  CONTRACT_ADDR,
+  ETH_ADDR,
+  TOKEN_TYPE_ETHER,
+} from "./constants";
 
 export function handleCreateRedPacket(call: Create_red_packetCall): void {
   let txHash = call.transaction.hash.toHexString();
@@ -33,7 +38,11 @@ export function handleCreateRedPacket(call: Create_red_packetCall): void {
   creator.save();
 
   // create token
-  let token = fetchToken(call.inputs._token_addr);
+  let token = fetchToken(
+    call.inputs._token_type.toI32() === TOKEN_TYPE_ETHER
+      ? (Bytes.fromHexString(ETH_ADDR) as Address)
+      : call.inputs._token_addr
+  );
   token.save();
 
   // create red packet
