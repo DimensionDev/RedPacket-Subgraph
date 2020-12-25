@@ -32,6 +32,7 @@ type RedPacket @entity {
   total: BigInt!
   total_remaining: BigInt!
   creation_time: Int!
+  last_updated_time: Int!
   duration: Int!
   chain_id: Int!
   token: Token!

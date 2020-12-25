@@ -60,6 +60,7 @@ export function handleCreateRedPacket(call: Create_red_packetCall): void {
   red_packet.shares = call.inputs._number;
   red_packet.is_random = call.inputs._ifrandom;
   red_packet.creation_time = red_packet_info.creation_time;
+  red_packet.last_updated_time = red_packet_info.creation_time;
   red_packet.creator = creator.id;
   red_packet.claimers = [];
   red_packet.token = token.id;
@@ -83,6 +84,20 @@ export function handleClaimSuccess(event: ClaimSuccess): void {
   claimer.address = event.params.claimer;
   claimer.name = event.params.claimer.toHexString().slice(0, 6);
   claimer.save();
+
+  // update pool
+  let red_packet = RedPacket.load(rpid);
+  if (red_packet == null) {
+    return;
+  }
+  red_packet.last_updated_time = event.block.timestamp.toI32();
+  red_packet.total_remaining = red_packet.total_remaining.minus(
+    event.params.claimed_value
+  );
+  if (!red_packet.claimers.includes(claimer_addr)) {
+    red_packet.claimers = red_packet.claimers.concat([claimer.id]);
+  }
+  red_packet.save();
 }
 
 export function handleCreationSuccess(event: CreationSuccess): void {
