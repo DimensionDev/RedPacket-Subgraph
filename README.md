@@ -1,6 +1,6 @@
 # RedPacket Subgraph
 
-This subgraph tracks all of red packets create by the HappyRedPacket contract.
+This subgraph tracks all of the red packets created by the HappyRedPacket contract.
 
 ## Setup
 
