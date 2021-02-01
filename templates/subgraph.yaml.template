@@ -3,13 +3,14 @@ description: RedPacket for Ethereum
 schema:
   file: ./schema.graphql
 dataSources:  
+{{#contracts}}
   - kind: ethereum/contract
-    name: RedPacket
-    network: rinkeby
+    name: {{name}}
+    network: {{network}}
     source:
-      address: "0xE2a7782B6a19D018a80a01D624c35f93185290B0"
+      address: "{{address}}"
       abi: RedPacket
-      startBlock: 7973173
+      startBlock: {{startBlock}}
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
@@ -38,3 +39,4 @@ dataSources:
         - event: RefundSuccess(bytes32,address,uint256)
           handler: handleRefundSuccess
       file: ./src/mapping.ts
+{{/contracts}}      

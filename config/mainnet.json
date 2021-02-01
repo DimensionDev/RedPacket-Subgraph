@@ -1,0 +1,11 @@
+{
+  "chainId": 1,
+  "network": "mainnet",
+  "contracts": [
+    {
+      "name": "RedPacket",
+      "address": "0x26760783c12181efa3c435aee4ae686c53bdddbb",
+      "startBlock": 9389415
+    }
+  ]
+}
