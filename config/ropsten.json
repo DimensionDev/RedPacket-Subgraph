@@ -1,0 +1,11 @@
+{
+  "chainId": 3,
+  "network": "ropsten",
+  "contracts": [
+    {
+      "name": "RedPacket",
+      "address": "0x25Dfa3275E2C44ce51E8ff977B9BdcF24aE46A34",
+      "startBlock": 9578388
+    }
+  ]
+}

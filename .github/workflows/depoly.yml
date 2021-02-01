@@ -38,11 +38,11 @@ jobs:
           yarn deploy-thegraph-mainnet --access-token ${{ secrets.ACCESS_TOKEN }}    
         if: github.ref == 'refs/heads/master'
       - run: |
-          yarn prepare-subgraph:rinkeby
-          yarn prepare-constants:rinkeby
+          yarn prepare-subgraph:ropsten
+          yarn prepare-constants:ropsten
           yarn codegen
           yarn build
-          yarn deploy-thegraph-rinkeby --access-token ${{ secrets.ACCESS_TOKEN }}
+          yarn deploy-thegraph-ropsten --access-token ${{ secrets.ACCESS_TOKEN }}
         if: startsWith(github.ref, 'refs/heads/develop')
 
 
