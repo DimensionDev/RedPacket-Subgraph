@@ -2,15 +2,24 @@
   "name": "redpacket-subgraph",
   "license": "MIT",
   "scripts": {
+    "prepare-subgraph:mainnet": "mustache config/mainnet.json templates/subgraph.yaml.template > subgraph.yaml",
+    "prepare-subgraph:rinkeby": "mustache config/rinkeby.json templates/subgraph.yaml.template > subgraph.yaml",
+    "prepare-constants:mainnet": "mustache config/mainnet.json templates/constants.ts.template > src/constants.ts",
+    "prepare-constants:rinkeby": "mustache config/rinkeby.json templates/constants.ts.template > src/constants.ts",
     "codegen": "graph codegen",
     "build": "graph build",
-    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ dimensiondev/mask-red-packet",
-    "create-local": "graph create --node http://localhost:8020/ dimensiondev/mask-red-packet",
-    "remove-local": "graph remove --node http://localhost:8020/ dimensiondev/mask-red-packet",
-    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 dimensiondev/mask-red-packet"
+    "deploy-thegraph-mainnet": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ dimensiondev/mask-red-packet",
+    "deploy-thegraph-rinkeby": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ dimensiondev/mask-red-packet-rinkeby",
+    "create-local": "graph create --node http://localhost:8020/ dimensiondev/mask-red-packet-rinkeby",
+    "remove-local": "graph remove --node http://localhost:8020/ dimensiondev/mask-red-packet-rinkeby",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 dimensiondev/mask-red-packet-rinkeby"
   },
   "dependencies": {
     "@graphprotocol/graph-cli": "0.19.0",
-    "@graphprotocol/graph-ts": "0.19.0"
+    "@graphprotocol/graph-ts": "0.19.0",
+    "mustache": "^4.1.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.1.3"
   }
 }

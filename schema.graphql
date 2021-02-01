@@ -28,6 +28,7 @@ type RedPacket @entity {
   hash: String!
   shares: Int!
   message: String!
+  name: String!
   is_random: Boolean!
   total: BigInt!
   total_remaining: BigInt!
@@ -43,5 +44,7 @@ type RedPacket @entity {
 type RedPacketInfo @entity {
   id: ID!
   rpid: String!
+  message: String!  
+  name: String!
   creation_time: Int!
 }

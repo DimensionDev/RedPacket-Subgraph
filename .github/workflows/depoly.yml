@@ -2,7 +2,7 @@ name: Deploy subgraph
 
 on:
   push:
-    branches: [master]
+    branches: [master, 'develop/**']
 
 jobs:
   deploy:
@@ -29,8 +29,21 @@ jobs:
           key: ${{ matrix.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ matrix.os }}-yarn-
-
       - run: yarn
-      - run: yarn codegen
-      - run: yarn build
-      - run: yarn deploy --access-token ${{ secrets.ACCESS_TOKEN }}
+      - run: |
+          yarn prepare-subgraph:mainnet
+          yarn prepare-constants:mainnet
+          yarn codegen
+          yarn build
+          yarn deploy-thegraph-mainnet --access-token ${{ secrets.ACCESS_TOKEN }}    
+        if: github.ref == 'refs/heads/master'
+      - run: |
+          yarn prepare-subgraph:rinkeby
+          yarn prepare-constants:rinkeby
+          yarn codegen
+          yarn build
+          yarn deploy-thegraph-rinkeby --access-token ${{ secrets.ACCESS_TOKEN }}
+        if: startsWith(github.ref, 'refs/heads/develop')
+
+
+

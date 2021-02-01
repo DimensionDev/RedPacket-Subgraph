@@ -1,0 +1,11 @@
+{
+  "chainId": 4,
+  "network": "rinkeby",
+  "contracts": [
+    {
+      "name": "RedPacket",
+      "address": "0xE2a7782B6a19D018a80a01D624c35f93185290B0",
+      "startBlock": 7973173
+    }
+  ]
+}
