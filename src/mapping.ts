@@ -51,6 +51,7 @@ export function handleCreateRedPacket(call: Create_red_packetCall): void {
   red_packet.chain_id = CHAIN_ID;
   red_packet.contract_address = Bytes.fromHexString(CONTRACT_ADDR) as Address;
   red_packet.rpid = rpid;
+  red_packet.txid = txHash;
   red_packet.password = "PASSWORD INVALID"; // a password was stored locally and kept by creator
   red_packet.message = call.inputs._message;
   red_packet.name = call.inputs._name;
