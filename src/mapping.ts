@@ -109,8 +109,8 @@ export function handleCreationSuccess(event: CreationSuccess): void {
   // the creation of the pool happens when the call handler was triggered
   let red_packet_info = new RedPacketInfo(txHash);
   red_packet_info.rpid = event.params.id.toHexString();
-  red_packet_info.message = event.params.message ?? '';
-  red_packet_info.name = event.params.name ?? '';
+  red_packet_info.message = event.params.message || '';
+  red_packet_info.name = event.params.name || '';
   red_packet_info.creation_time = event.params.creation_time.toI32();
   red_packet_info.save();
 }
