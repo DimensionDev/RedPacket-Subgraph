@@ -8,8 +8,8 @@ dataSources:
     network: ropsten
     source:
       address: "0x6d84e4863c0530bc0bb4291ef0ff454a40660ca3"
-      abi: RedPacket
-      startBlock: 9578388
+      abi: RedPacketV1
+      startBlock: 9800502
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
@@ -19,7 +19,7 @@ dataSources:
         - CreationSuccess
         - RefundSuccess
       abis:
-        - name: RedPacket
+        - name: RedPacketV1
           file: ./abis/RedPacketV1.json
         - name: ERC20
           file: ./abis/ERC20.json
@@ -43,7 +43,7 @@ dataSources:
     network: ropsten
     source:
       address: "0x25Dfa3275E2C44ce51E8ff977B9BdcF24aE46A34"
-      abi: RedPacket
+      abi: RedPacketV2
       startBlock: 9578388
     mapping:
       kind: ethereum/events
@@ -54,7 +54,7 @@ dataSources:
         - CreationSuccess
         - RefundSuccess
       abis:
-        - name: RedPacket
+        - name: RedPacketV2
           file: ./abis/RedPacketV2.json
         - name: ERC20
           file: ./abis/ERC20.json

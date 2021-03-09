@@ -5,7 +5,7 @@ import {
   CreationSuccess,
   RefundSuccess,
   Create_red_packetCall,
-} from "../generated/RedPacketV2/RedPacket";
+} from "../generated/RedPacketV2/RedPacketV2";
 import {
   Claimer,
   Creator,

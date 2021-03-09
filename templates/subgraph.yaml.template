@@ -9,7 +9,7 @@ dataSources:
     network: {{network}}
     source:
       address: "{{address}}"
-      abi: RedPacket
+      abi: {{abi}}
       startBlock: {{startBlock}}
     mapping:
       kind: ethereum/events
@@ -20,7 +20,7 @@ dataSources:
         - CreationSuccess
         - RefundSuccess
       abis:
-        - name: RedPacket
+        - name: {{abi}}
           file: ./abis/{{abi}}.json
         - name: ERC20
           file: ./abis/ERC20.json
