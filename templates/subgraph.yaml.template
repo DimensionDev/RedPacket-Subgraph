@@ -38,5 +38,5 @@ dataSources:
           handler: handleCreationSuccess
         - event: RefundSuccess(bytes32,address,uint256)
           handler: handleRefundSuccess
-      file: ./src/mapping.ts
+      file: ./src/{{mapping}}.ts
 {{/contracts}}      

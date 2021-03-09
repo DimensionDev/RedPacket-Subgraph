@@ -37,7 +37,7 @@ dataSources:
           handler: handleCreationSuccess
         - event: RefundSuccess(bytes32,address,uint256)
           handler: handleRefundSuccess
-      file: ./src/mapping.ts
+      file: ./src/mappingV1.ts
   - kind: ethereum/contract
     name: RedPacketV2
     network: ropsten
@@ -72,4 +72,4 @@ dataSources:
           handler: handleCreationSuccess
         - event: RefundSuccess(bytes32,address,uint256)
           handler: handleRefundSuccess
-      file: ./src/mapping.ts
+      file: ./src/mappingV2.ts

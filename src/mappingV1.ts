@@ -5,7 +5,7 @@ import {
   CreationSuccess,
   RefundSuccess,
   Create_red_packetCall,
-} from "../generated/RedPacketV2/RedPacketV2";
+} from "../generated/RedPacketV1/RedPacketV1";
 import {
   Claimer,
   Creator,
@@ -58,7 +58,7 @@ export function handleCreateRedPacket(call: Create_red_packetCall): void {
   red_packet.total = call.inputs._total_tokens;
   red_packet.total_remaining = call.inputs._total_tokens;
   red_packet.duration = call.inputs._duration.toI32();
-  red_packet.shares = call.inputs._number.toI32();
+  red_packet.shares = call.inputs._number;
   red_packet.is_random = call.inputs._ifrandom;
   red_packet.creation_time = red_packet_info.creation_time;
   red_packet.last_updated_time = red_packet_info.creation_time;
@@ -109,8 +109,8 @@ export function handleCreationSuccess(event: CreationSuccess): void {
   // the creation of the pool happens when the call handler was triggered
   let red_packet_info = new RedPacketInfo(txHash);
   red_packet_info.rpid = event.params.id.toHexString();
-  red_packet_info.message = event.params.message || '';
-  red_packet_info.name = event.params.name || '';
+  red_packet_info.message = '';
+  red_packet_info.name = '';
   red_packet_info.creation_time = event.params.creation_time.toI32();
   red_packet_info.save();
 }
