@@ -5,9 +5,9 @@ import {
   TOKEN_TYPE_ERC20,
   ETH_ADDR,
 } from "./constants";
-import { ERC20 } from "../generated/RedPacket/ERC20";
-import { ERC20NameBytes } from "../generated/RedPacket/ERC20NameBytes";
-import { ERC20SymbolBytes } from "../generated/RedPacket/ERC20SymbolBytes";
+import { ERC20 } from "../generated/RedPacketV2/ERC20";
+import { ERC20NameBytes } from "../generated/RedPacketV2/ERC20NameBytes";
+import { ERC20SymbolBytes } from "../generated/RedPacketV2/ERC20SymbolBytes";
 import { Token } from "../generated/schema";
 
 export function isEth(value: string): boolean {

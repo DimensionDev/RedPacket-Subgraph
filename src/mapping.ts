@@ -5,7 +5,7 @@ import {
   CreationSuccess,
   RefundSuccess,
   Create_red_packetCall,
-} from "../generated/RedPacket/RedPacket";
+} from "../generated/RedPacketV2/RedPacket";
 import {
   Claimer,
   Creator,
@@ -14,7 +14,6 @@ import {
 } from "../generated/schema";
 import {
   CHAIN_ID,
-  CONTRACT_ADDR,
   ETH_ADDR,
   TOKEN_TYPE_ETHER,
 } from "./constants";
@@ -49,7 +48,7 @@ export function handleCreateRedPacket(call: Create_red_packetCall): void {
   let rpid = red_packet_info.rpid;
   let red_packet = new RedPacket(rpid);
   red_packet.chain_id = CHAIN_ID;
-  red_packet.contract_address = Bytes.fromHexString(CONTRACT_ADDR) as Address;
+  red_packet.contract_address = call.to;
   red_packet.rpid = rpid;
   red_packet.txid = txHash;
   red_packet.password = "PASSWORD INVALID"; // a password was stored locally and kept by creator
@@ -110,8 +109,8 @@ export function handleCreationSuccess(event: CreationSuccess): void {
   // the creation of the pool happens when the call handler was triggered
   let red_packet_info = new RedPacketInfo(txHash);
   red_packet_info.rpid = event.params.id.toHexString();
-  red_packet_info.message = event.params.message;
-  red_packet_info.name = event.params.name;
+  red_packet_info.message = event.params.message ?? '';
+  red_packet_info.name = event.params.name ?? '';
   red_packet_info.creation_time = event.params.creation_time.toI32();
   red_packet_info.save();
 }

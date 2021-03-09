@@ -4,8 +4,21 @@
   "contracts": [
     {
       "name": "RedPacket",
+      "address": "0x6d84e4863c0530bc0bb4291ef0ff454a40660ca3",
+      "startBlock": 9578388,
+      "abi": "RedPacketV1",
+      "creationSuccess": "CreationSuccess(uint256,bytes32,address,uint256,address)",
+      "create_red_packet": "create_red_packet(bytes32,uint8,bool,uint256,bytes32,string,string,uint256,address,uint256)",
+      "contract_version": 1
+    },
+    {
+      "name": "RedPacket",
       "address": "0x25Dfa3275E2C44ce51E8ff977B9BdcF24aE46A34",
-      "startBlock": 9578388
+      "startBlock": 9578388,
+      "abi": "RedPacketV2",
+      "creationSuccess": "CreationSuccess(uint256,bytes32,string,string,address,uint256,address)",
+      "create_red_packet": "create_red_packet(bytes32,uint256,bool,uint256,bytes32,string,string,uint256,address,uint256)",
+      "contract_version": 2
     }
   ]
 }
