@@ -14,8 +14,8 @@
     },
     {
       "name": "RedPacket",
-      "address": "0x25Dfa3275E2C44ce51E8ff977B9BdcF24aE46A34",
-      "startBlock": 9578388,
+      "address": "0x2E37676de88aD97f2BdBAa24d1421b4E3f3a63c8",
+      "startBlock": 10226539,
       "abi": "RedPacketV2",
       "creationSuccess": "CreationSuccess(uint256,bytes32,string,string,address,uint256,address)",
       "create_red_packet": "create_red_packet(bytes32,uint256,bool,uint256,bytes32,string,string,uint256,address,uint256)",
