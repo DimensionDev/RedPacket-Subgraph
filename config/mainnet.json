@@ -5,7 +5,22 @@
     {
       "name": "RedPacket",
       "address": "0x26760783c12181efa3c435aee4ae686c53bdddbb",
-      "startBlock": 9389415
+      "startBlock": 9389415,
+      "abi": "RedPacketV1",
+      "creationSuccess": "CreationSuccess(uint256,bytes32,address,uint256,address)",
+      "create_red_packet": "create_red_packet(bytes32,uint8,bool,uint256,bytes32,string,string,uint256,address,uint256)",
+      "contract_version": 1,
+      "mapping": "mappingV1"      
+    },
+    {
+      "name": "RedPacket",
+      "address": "0x8D8912E1237F9FF3EF661F32743CFB276E052F98",
+      "startBlock": 12500918,
+      "abi": "RedPacketV2",
+      "creationSuccess": "CreationSuccess(uint256,bytes32,string,string,address,uint256,address)",
+      "create_red_packet": "create_red_packet(bytes32,uint256,bool,uint256,bytes32,string,string,uint256,address,uint256)",
+      "contract_version": 2,
+      "mapping": "mappingV2"      
     }
   ]
 }

@@ -5,11 +5,11 @@ schema:
 dataSources:  
 {{#contracts}}
   - kind: ethereum/contract
-    name: {{name}}
+    name: {{abi}}
     network: {{network}}
     source:
       address: "{{address}}"
-      abi: RedPacket
+      abi: {{abi}}
       startBlock: {{startBlock}}
     mapping:
       kind: ethereum/events
@@ -20,8 +20,8 @@ dataSources:
         - CreationSuccess
         - RefundSuccess
       abis:
-        - name: RedPacket
-          file: ./abis/RedPacket.json
+        - name: {{abi}}
+          file: ./abis/{{abi}}.json
         - name: ERC20
           file: ./abis/ERC20.json
         - name: ERC20SymbolBytes
@@ -29,14 +29,14 @@ dataSources:
         - name: ERC20NameBytes
           file: ./abis/ERC20NameBytes.json
       callHandlers:
-        - function: create_red_packet(bytes32,uint256,bool,uint256,bytes32,string,string,uint256,address,uint256)
+        - function: {{create_red_packet}}
           handler: handleCreateRedPacket
       eventHandlers:
         - event: ClaimSuccess(bytes32,address,uint256,address)
           handler: handleClaimSuccess
-        - event: CreationSuccess(uint256,bytes32,string,string,address,uint256,address)
+        - event: {{creationSuccess}}
           handler: handleCreationSuccess
         - event: RefundSuccess(bytes32,address,uint256)
           handler: handleRefundSuccess
-      file: ./src/mapping.ts
+      file: ./src/{{mapping}}.ts
 {{/contracts}}      

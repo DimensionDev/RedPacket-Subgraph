@@ -5,7 +5,7 @@ import {
   CreationSuccess,
   RefundSuccess,
   Create_red_packetCall,
-} from "../generated/RedPacket/RedPacket";
+} from "../generated/RedPacketV2/RedPacketV2";
 import {
   Claimer,
   Creator,
@@ -14,7 +14,6 @@ import {
 } from "../generated/schema";
 import {
   CHAIN_ID,
-  CONTRACT_ADDR,
   ETH_ADDR,
   TOKEN_TYPE_ETHER,
 } from "./constants";
@@ -49,8 +48,10 @@ export function handleCreateRedPacket(call: Create_red_packetCall): void {
   let rpid = red_packet_info.rpid;
   let red_packet = new RedPacket(rpid);
   red_packet.chain_id = CHAIN_ID;
-  red_packet.contract_address = Bytes.fromHexString(CONTRACT_ADDR) as Address;
+  red_packet.contract_address = call.to;
+  red_packet.contract_version = 2;
   red_packet.rpid = rpid;
+  red_packet.txid = txHash;
   red_packet.password = "PASSWORD INVALID"; // a password was stored locally and kept by creator
   red_packet.message = call.inputs._message;
   red_packet.name = call.inputs._name;

@@ -23,7 +23,9 @@ type Token @entity {
 type RedPacket @entity {
   id: ID!
   rpid: String!
+  txid: String!
   contract_address: Bytes!
+  contract_version: Int!
   password: String!
   hash: String!
   shares: Int!
