@@ -1,0 +1,39 @@
+specVersion: 0.0.2
+description: {{description}}
+schema:
+  file: ./schema.graphql
+dataSources:  
+{{#contracts}}
+  - kind: ethereum/contract
+    name: {{abi}}
+    network: {{network}}
+    source:
+      address: "{{address}}"
+      abi: {{abi}}
+      startBlock: {{startBlock}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - ClaimSuccess
+        - CreationSuccess
+        - RefundSuccess
+      abis:
+        - name: {{abi}}
+          file: ./abis/{{abi}}.json
+        - name: ERC20
+          file: ./abis/ERC20.json
+        - name: ERC20SymbolBytes
+          file: ./abis/ERC20SymbolBytes.json
+        - name: ERC20NameBytes
+          file: ./abis/ERC20NameBytes.json
+      eventHandlers:
+        - event: ClaimSuccess(bytes32,address,uint256,address)
+          handler: handleClaimSuccess
+        - event: {{creationSuccess}}
+          handler: handleCreationSuccess
+        - event: RefundSuccess(bytes32,address,uint256)
+          handler: handleRefundSuccess
+      file: ./src/{{mapping}}.ts
+{{/contracts}}      
