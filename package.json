@@ -4,7 +4,7 @@
   "scripts": {
     "prepare-subgraph:mainnet": "mustache config/mainnet.json templates/subgraph.yaml.template > subgraph.yaml",
     "prepare-subgraph:ropsten": "mustache config/ropsten.json templates/subgraph.yaml.template > subgraph.yaml",
-    "prepare-subgraph:bsc": "mustache config/bsc.json templates/subgraph.bsc.yaml.template > subgraph.yaml",    
+    "prepare-subgraph:bsc": "mustache config/bsc.json templates/subgraph.yaml.template > subgraph.yaml",    
     "prepare-constants:mainnet": "mustache config/mainnet.json templates/constants.ts.template > src/constants.ts",
     "prepare-constants:ropsten": "mustache config/ropsten.json templates/constants.ts.template > src/constants.ts",
     "prepare-constants:bsc": "mustache config/bsc.json templates/constants.ts.template > src/constants.ts",   
