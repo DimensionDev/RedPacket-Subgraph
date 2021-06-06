@@ -1,6 +1,6 @@
 {
   "chainId": 56,
-  "network": "mainnet",
+  "network": "bsc",
   "contracts": [
     {
       "name": "RedPacket",
