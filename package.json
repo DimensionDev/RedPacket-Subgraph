@@ -12,7 +12,7 @@
     "build": "graph build",
     "deploy-thegraph-mainnet": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ dimensiondev/mask-red-packet-mainnet",
     "deploy-thegraph-ropsten": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ dimensiondev/mask-red-packet-ropsten",
-    "deploy-thegraph-bsc": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ dimensiondev/mask-red-packet-bsc-chapel",    
+    "deploy-thegraph-bsc": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ dimensiondev/mask-red-packet-bsc-mainnet",    
     "create-local": "graph create --node http://localhost:8020/ dimensiondev/mask-red-packet-ropsten",
     "remove-local": "graph remove --node http://localhost:8020/ dimensiondev/mask-red-packet-ropsten",
     "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 dimensiondev/mask-red-packet-ropsten"
