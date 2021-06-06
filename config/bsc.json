@@ -1,0 +1,16 @@
+{
+  "chainId": 56,
+  "network": "mainnet",
+  "contracts": [
+    {
+      "name": "RedPacket",
+      "address": "0x6cc1b1058F9153358278C35E0b2D382f1585854B",
+      "startBlock": 7893711,
+      "abi": "RedPacketV2",
+      "creationSuccess": "CreationSuccess(uint256,bytes32,string,string,address,uint256,address)",
+      "create_red_packet": "create_red_packet(bytes32,uint256,bool,uint256,bytes32,string,string,uint256,address,uint256)",
+      "contract_version": 2,
+      "mapping": "mappingV2"
+    }
+  ]
+}
