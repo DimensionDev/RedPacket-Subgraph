@@ -33,6 +33,12 @@ export function handleCreationSuccess(event: CreationSuccess): void {
   let token = fetchToken(event.params.token_address);
   token.save();
 
+  red_packet_info.rpid = event.params.id.toHexString();
+  red_packet_info.message = event.params.message;
+  red_packet_info.name = event.params.name;
+  red_packet_info.creation_time = event.params.creation_time.toI32();
+  red_packet_info.save();  
+
   // create red packet
   let rpid = red_packet_info.rpid;
   let red_packet = new RedPacket(rpid);  
@@ -55,12 +61,6 @@ export function handleCreationSuccess(event: CreationSuccess): void {
   red_packet.claimers = [];
   red_packet.token = token.id;
   red_packet.save();  
-
-  red_packet_info.rpid = event.params.id.toHexString();
-  red_packet_info.message = event.params.message;
-  red_packet_info.name = event.params.name;
-  red_packet_info.creation_time = event.params.creation_time.toI32();
-  red_packet_info.save();
 }
 
 export function handleClaimSuccess(event: ClaimSuccess): void {
