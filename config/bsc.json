@@ -1,12 +1,12 @@
 {
-  "chainId": 56,
-  "network": "bsc",
+  "chainId": 80001,
+  "network": "mumbai",
   "contracts": [
     {
       "name": "RedPacket",
       "description": "RedPacket for bsc mainnet",
-      "address": "0x8440b99B1Df5D4B61957c8Ce0a199487Be3De270",
-      "startBlock": 7993711,
+      "address": "0x6DfC82B48CFd38d4722366Cd6F444a341b8840f5",
+      "startBlock": 14167200,
       "abi": "RedPacketV2",
       "creationSuccess": "CreationSuccess(uint256,bytes32,string,string,address,uint256,address)",
       "create_red_packet": "create_red_packet(bytes32,uint256,bool,uint256,bytes32,string,string,uint256,address,uint256)",
