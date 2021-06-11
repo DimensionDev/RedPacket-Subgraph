@@ -1,0 +1,18 @@
+{
+  "chainId": 56,
+  "network": "bsc",
+  "contract_version": 3,
+  "contracts": [
+    {
+      "name": "RedPacket",
+      "description": "RedPacket for bsc mainnet",
+      "address": "0x71834a3FDeA3E70F14a93ED85c6be70925D0CAd9",
+      "startBlock": 8197511,
+      "abi": "RedPacketV3",
+      "creationSuccess": "CreationSuccess(uint256,bytes32,string,string,address,uint256,address,uint256,bool,uint256)",
+      "create_red_packet": "create_red_packet(bytes32,uint256,bool,uint256,bytes32,string,string,uint256,address,uint256)",
+      "contract_version": 3,
+      "mapping": "mappingV3"
+    }
+  ]
+}

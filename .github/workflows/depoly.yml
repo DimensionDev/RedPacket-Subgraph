@@ -2,7 +2,7 @@ name: Deploy subgraph
 
 on:
   push:
-    branches: [master, 'develop/ropsten/**', 'develop/mumbai/**']
+    branches: [master, 'develop/ropsten/**', 'develop/mumbai/**', 'develop/bsc/**', 'develop/polygon/**']
 
 jobs:
   deploy:
@@ -51,6 +51,20 @@ jobs:
           yarn build
           yarn deploy-thegraph-mumbai --access-token ${{ secrets.ACCESS_TOKEN }}    
         if: startsWith(github.ref, 'refs/heads/develop/mumbai')
+      - run: |
+          yarn prepare-subgraph:bsc
+          yarn prepare-constants:bsc
+          yarn codegen
+          yarn build
+          yarn deploy-thegraph-bsc --access-token ${{ secrets.ACCESS_TOKEN }}    
+        if: startsWith(github.ref, 'refs/heads/develop/bsc')        
+      - run: |
+          yarn prepare-subgraph:polygon
+          yarn prepare-constants:polygon
+          yarn codegen
+          yarn build
+          yarn deploy-thegraph-polygon --access-token ${{ secrets.ACCESS_TOKEN }}    
+        if: startsWith(github.ref, 'refs/heads/develop/polygon')             
 
 
 
