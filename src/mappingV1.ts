@@ -55,7 +55,6 @@ export function handleCreateRedPacket(call: Create_red_packetCall): void {
   red_packet.password = "PASSWORD INVALID"; // a password was stored locally and kept by creator
   red_packet.message = call.inputs._message;
   red_packet.name = call.inputs._name;
-  red_packet.hash = call.inputs._hash.toHexString();
   red_packet.total = call.inputs._total_tokens;
   red_packet.total_remaining = call.inputs._total_tokens;
   red_packet.duration = call.inputs._duration.toI32();
