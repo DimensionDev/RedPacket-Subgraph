@@ -1,9 +1,11 @@
 {
   "chainId": 1,
   "network": "mainnet",
+  "contract_version": 2,
   "contracts": [
     {
       "name": "RedPacket",
+      "description": "RedPacket for eth mainnet",
       "address": "0x26760783c12181efa3c435aee4ae686c53bdddbb",
       "startBlock": 9389415,
       "abi": "RedPacketV1",
@@ -14,6 +16,7 @@
     },
     {
       "name": "RedPacket",
+      "description": "RedPacket for eth mainnet",
       "address": "0x8D8912E1237F9FF3EF661F32743CFB276E052F98",
       "startBlock": 12500918,
       "abi": "RedPacketV2",

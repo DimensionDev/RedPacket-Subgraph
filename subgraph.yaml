@@ -1,15 +1,15 @@
 specVersion: 0.0.2
-description: RedPacket for Ethereum
+description: 
 schema:
   file: ./schema.graphql
 dataSources:  
   - kind: ethereum/contract
-    name: RedPacketV1
-    network: ropsten
+    name: RedPacketV3
+    network: mumbai
     source:
-      address: "0x6d84e4863c0530bc0bb4291ef0ff454a40660ca3"
-      abi: RedPacketV1
-      startBlock: 9800502
+      address: "0x0061E06c9f640a03C4981f43762d2AE5e03873c5"
+      abi: RedPacketV3
+      startBlock: 14167200
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
@@ -19,57 +19,19 @@ dataSources:
         - CreationSuccess
         - RefundSuccess
       abis:
-        - name: RedPacketV1
-          file: ./abis/RedPacketV1.json
+        - name: RedPacketV3
+          file: ./abis/RedPacketV3.json
         - name: ERC20
           file: ./abis/ERC20.json
         - name: ERC20SymbolBytes
           file: ./abis/ERC20SymbolBytes.json
         - name: ERC20NameBytes
           file: ./abis/ERC20NameBytes.json
-      callHandlers:
-        - function: create_red_packet(bytes32,uint8,bool,uint256,bytes32,string,string,uint256,address,uint256)
-          handler: handleCreateRedPacket
       eventHandlers:
         - event: ClaimSuccess(bytes32,address,uint256,address)
           handler: handleClaimSuccess
-        - event: CreationSuccess(uint256,bytes32,address,uint256,address)
+        - event: CreationSuccess(uint256,bytes32,string,string,address,uint256,address,uint256,bool,uint256)
           handler: handleCreationSuccess
         - event: RefundSuccess(bytes32,address,uint256)
           handler: handleRefundSuccess
-      file: ./src/mappingV1.ts
-  - kind: ethereum/contract
-    name: RedPacketV2
-    network: ropsten
-    source:
-      address: "0x25Dfa3275E2C44ce51E8ff977B9BdcF24aE46A34"
-      abi: RedPacketV2
-      startBlock: 9578388
-    mapping:
-      kind: ethereum/events
-      apiVersion: 0.0.4
-      language: wasm/assemblyscript
-      entities:
-        - ClaimSuccess
-        - CreationSuccess
-        - RefundSuccess
-      abis:
-        - name: RedPacketV2
-          file: ./abis/RedPacketV2.json
-        - name: ERC20
-          file: ./abis/ERC20.json
-        - name: ERC20SymbolBytes
-          file: ./abis/ERC20SymbolBytes.json
-        - name: ERC20NameBytes
-          file: ./abis/ERC20NameBytes.json
-      callHandlers:
-        - function: create_red_packet(bytes32,uint256,bool,uint256,bytes32,string,string,uint256,address,uint256)
-          handler: handleCreateRedPacket
-      eventHandlers:
-        - event: ClaimSuccess(bytes32,address,uint256,address)
-          handler: handleClaimSuccess
-        - event: CreationSuccess(uint256,bytes32,string,string,address,uint256,address)
-          handler: handleCreationSuccess
-        - event: RefundSuccess(bytes32,address,uint256)
-          handler: handleRefundSuccess
-      file: ./src/mappingV2.ts
+      file: ./src/mappingV3.ts

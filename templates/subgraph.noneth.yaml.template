@@ -28,9 +28,6 @@ dataSources:
           file: ./abis/ERC20SymbolBytes.json
         - name: ERC20NameBytes
           file: ./abis/ERC20NameBytes.json
-      callHandlers:
-        - function: {{create_red_packet}}
-          handler: handleCreateRedPacket
       eventHandlers:
         - event: ClaimSuccess(bytes32,address,uint256,address)
           handler: handleClaimSuccess

@@ -3,3 +3,4 @@ generated/
 subgraph.yaml
 src/constants.ts
 node_modules
+.DS_store

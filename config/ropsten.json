@@ -1,9 +1,11 @@
 {
   "chainId": 3,
   "network": "ropsten",
+  "contract_version": 2,
   "contracts": [
     {
       "name": "RedPacket",
+      "description": "RedPacket for eth ropsten",
       "address": "0x6d84e4863c0530bc0bb4291ef0ff454a40660ca3",
       "startBlock": 9800502,
       "abi": "RedPacketV1",
@@ -14,6 +16,7 @@
     },
     {
       "name": "RedPacket",
+      "description": "RedPacket for eth ropsten",
       "address": "0x2E37676de88aD97f2BdBAa24d1421b4E3f3a63c8",
       "startBlock": 10226539,
       "abi": "RedPacketV2",
