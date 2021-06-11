@@ -1,6 +1,7 @@
 {
   "chainId": 3,
   "network": "ropsten",
+  "contract_version": 2,
   "contracts": [
     {
       "name": "RedPacket",

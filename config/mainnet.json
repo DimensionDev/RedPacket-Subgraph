@@ -1,6 +1,7 @@
 {
   "chainId": 1,
   "network": "mainnet",
+  "contract_version": 2,
   "contracts": [
     {
       "name": "RedPacket",

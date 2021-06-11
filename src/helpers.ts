@@ -1,13 +1,14 @@
 import { BigInt, Address, log } from "@graphprotocol/graph-ts";
 import {
+  ERC20,
+  ERC20NameBytes,
+  ERC20SymbolBytes,
   CHAIN_ID,
   TOKEN_TYPE_ETHER,
   TOKEN_TYPE_ERC20,
   ETH_ADDR,
 } from "./constants";
-import { ERC20 } from "../generated/RedPacketV2/ERC20";
-import { ERC20NameBytes } from "../generated/RedPacketV2/ERC20NameBytes";
-import { ERC20SymbolBytes } from "../generated/RedPacketV2/ERC20SymbolBytes";
+
 import { Token } from "../generated/schema";
 
 export function isEth(value: string): boolean {

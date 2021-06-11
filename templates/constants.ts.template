@@ -1,4 +1,7 @@
 export const CHAIN_ID = {{chainId}};
+export { ERC20 } from "../generated/RedPacketV{{contract_version}}/ERC20";
+export { ERC20NameBytes } from "../generated/RedPacketV{{contract_version}}/ERC20NameBytes";
+export { ERC20SymbolBytes } from "../generated/RedPacketV{{contract_version}}/ERC20SymbolBytes";
 
 export const ETH_ADDR = "0x0000000000000000000000000000000000000000";
 
