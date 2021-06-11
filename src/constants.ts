@@ -1,4 +1,4 @@
-export const CHAIN_ID = 3;
+export const CHAIN_ID = 80001;
 
 export const ETH_ADDR = "0x0000000000000000000000000000000000000000";
 
