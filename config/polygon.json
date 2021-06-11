@@ -1,0 +1,18 @@
+{
+  "chainId": 137,
+  "network": "matic",
+  "contract_version": 3,
+  "contracts": [
+    {
+      "name": "RedPacket",
+      "description": "RedPacket for matic mainnet",
+      "address": "0x913975af2Bb8a6Be4100D7dc5e9765B77F6A5d6c",
+      "startBlock": 15577589,
+      "abi": "RedPacketV3",
+      "creationSuccess": "CreationSuccess(uint256,bytes32,string,string,address,uint256,address,uint256,bool,uint256)",
+      "create_red_packet": "create_red_packet(bytes32,uint256,bool,uint256,bytes32,string,string,uint256,address,uint256)",
+      "contract_version": 3,
+      "mapping": "mappingV3"
+    }
+  ]
+}
