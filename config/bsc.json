@@ -5,7 +5,7 @@
     {
       "name": "RedPacket",
       "description": "RedPacket for bsc mainnet",
-      "address": "0x6cc1b1058F9153358278C35E0b2D382f1585854B",
+      "address": "0x8440b99B1Df5D4B61957c8Ce0a199487Be3De270",
       "startBlock": 7993711,
       "abi": "RedPacketV2",
       "creationSuccess": "CreationSuccess(uint256,bytes32,string,string,address,uint256,address)",
