@@ -1,7 +1,6 @@
 {
   "chainId": 1,
   "network": "mainnet",
-  "contract_version": 2,
   "contracts": [
     {
       "name": "RedPacket",
@@ -11,7 +10,6 @@
       "abi": "RedPacketV1",
       "creationSuccess": "CreationSuccess(uint256,bytes32,address,uint256,address)",
       "create_red_packet": "create_red_packet(bytes32,uint8,bool,uint256,bytes32,string,string,uint256,address,uint256)",
-      "contract_version": 1,
       "mapping": "mappingV1"      
     },
     {
@@ -22,7 +20,6 @@
       "abi": "RedPacketV2",
       "creationSuccess": "CreationSuccess(uint256,bytes32,string,string,address,uint256,address)",
       "create_red_packet": "create_red_packet(bytes32,uint256,bool,uint256,bytes32,string,string,uint256,address,uint256)",
-      "contract_version": 2,
       "mapping": "mappingV2"      
     }
   ]
