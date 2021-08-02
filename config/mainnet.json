@@ -21,6 +21,16 @@
       "creationSuccess": "CreationSuccess(uint256,bytes32,string,string,address,uint256,address)",
       "create_red_packet": "create_red_packet(bytes32,uint256,bool,uint256,bytes32,string,string,uint256,address,uint256)",
       "mapping": "mappingV2"      
+    },
+    {
+      "name": "RedPacket",
+      "description": "RedPacket for eth mainnet",
+      "address": "0x7323ec104a689480dEbE8Eb1404FB0f9D425D2ca",
+      "startBlock": 12786824,
+      "abi": "RedPacketV4",
+      "creationSuccess": "CreationSuccess(uint256,bytes32,string,string,address,uint256,address,uint256,bool,uint256)",
+      "create_red_packet": "create_red_packet(address,uint256,bool,uint256,bytes32,string,string,uint256,address,uint256)",
+      "mapping": "mappingV4"      
     }
   ]
 }
