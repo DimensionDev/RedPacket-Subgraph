@@ -1,0 +1,16 @@
+{
+  "chainId": 42161,
+  "network": "arbitrum",
+  "contracts": [
+    {
+      "name": "RedPacket",
+      "description": "RedPacket for arbitrum mainnet",
+      "address": "0x83D6b366f21e413f214EB077D5378478e71a5eD2",
+      "startBlock": 193607,
+      "abi": "RedPacketV4",
+      "creationSuccess": "CreationSuccess(uint256,bytes32,string,string,address,uint256,address,uint256,bool,uint256)",
+      "create_red_packet": "create_red_packet(address,uint256,bool,uint256,bytes32,string,string,uint256,address,uint256)",
+      "mapping": "mappingV4"
+    }  
+  ]
+}
