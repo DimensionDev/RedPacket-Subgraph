@@ -57,7 +57,6 @@ jobs:
           yarn codegen
           yarn build
           yarn deploy-thegraph-arbitrum --access-token ${{ secrets.ACCESS_TOKEN }}    
-        if: startsWith(github.ref, 'refs/heads/develop/arbitrum')             
-
+        if: startsWith(github.ref, 'refs/heads/develop/arbitrum')
 
 
