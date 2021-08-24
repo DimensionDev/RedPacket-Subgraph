@@ -51,6 +51,12 @@ jobs:
           yarn build
           yarn deploy-thegraph-polygon --access-token ${{ secrets.ACCESS_TOKEN }}    
         if: startsWith(github.ref, 'refs/heads/develop/polygon')             
-
+      - run: |
+          yarn prepare-subgraph:arbitrum
+          yarn prepare-constants:arbitrum
+          yarn codegen
+          yarn build
+          yarn deploy-thegraph-arbitrum --access-token ${{ secrets.ACCESS_TOKEN }}    
+        if: startsWith(github.ref, 'refs/heads/develop/arbitrum')  
 
 
