@@ -24,6 +24,7 @@ type RedPacket @entity {
   id: ID!
   rpid: String!
   txid: String!
+  block_number: Int!
   contract_address: Bytes!
   contract_version: Int!
   password: String!

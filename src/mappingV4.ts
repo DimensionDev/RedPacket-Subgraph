@@ -43,6 +43,7 @@ export function handleCreationSuccess(event: CreationSuccess): void {
   let rpid = red_packet_info.rpid;
   let red_packet = new RedPacket(rpid);  
   red_packet.chain_id = CHAIN_ID;
+  red_packet.block_number = event.block.number.toI32();
   red_packet.contract_address = event.transaction.to!;
   red_packet.contract_version = 4
   red_packet.rpid = rpid;
