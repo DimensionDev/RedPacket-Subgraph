@@ -49,6 +49,7 @@ export function handleCreateRedPacket(call: Create_red_packetCall): void {
   let red_packet = new RedPacket(rpid);
   red_packet.chain_id = CHAIN_ID;
   red_packet.contract_address = call.to;
+  red_packet.block_number = call.block.number.toI32();  
   red_packet.contract_version = 1;
   red_packet.rpid = rpid;
   red_packet.txid = txHash;
