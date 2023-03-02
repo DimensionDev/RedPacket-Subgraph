@@ -12,11 +12,7 @@ import {
   RedPacket,
   RedPacketInfo,
 } from "../generated/schema";
-import {
-  CHAIN_ID,
-  ETH_ADDR,
-  TOKEN_TYPE_ETHER,
-} from "./constants";
+import { CHAIN_ID, ETH_ADDR, TOKEN_TYPE_ETHER } from "./constants";
 
 export function handleCreateRedPacket(call: Create_red_packetCall): void {
   let txHash = call.transaction.hash.toHexString();
@@ -47,6 +43,7 @@ export function handleCreateRedPacket(call: Create_red_packetCall): void {
   // create red packet
   let rpid = red_packet_info.rpid;
   let red_packet = new RedPacket(rpid);
+  red_packet.creator_address = call.from;
   red_packet.chain_id = CHAIN_ID;
   red_packet.contract_address = call.to;
   red_packet.contract_version = 1;
@@ -109,8 +106,8 @@ export function handleCreationSuccess(event: CreationSuccess): void {
   // the creation of the pool happens when the call handler was triggered
   let red_packet_info = new RedPacketInfo(txHash);
   red_packet_info.rpid = event.params.id.toHexString();
-  red_packet_info.message = '';
-  red_packet_info.name = '';
+  red_packet_info.message = "";
+  red_packet_info.name = "";
   red_packet_info.creation_time = event.params.creation_time.toI32();
   red_packet_info.save();
 }

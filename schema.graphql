@@ -40,6 +40,7 @@ type RedPacket @entity {
   chain_id: Int!
   token: Token!
   creator: Creator!
+  creator_address: Bytes!
   claimers: [Claimer!]!
 }
 
@@ -49,4 +50,39 @@ type RedPacketInfo @entity {
   message: String!  
   name: String!
   creation_time: Int!
+}
+
+type ClaimSuccess @entity(immutable: true) {
+  id: ID! # bytes32
+  claimer: Bytes! # address
+  claimed_value: BigInt! # uint256
+  token_address: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type CreationSuccess @entity(immutable: true) {
+  total: BigInt! # uint256
+  id: ID! # bytes32
+  name: String! # string
+  message: String! # string
+  creator: Bytes! # address
+  creation_time: BigInt! # uint256
+  token_address: Bytes! # address
+  number: BigInt! # uint256
+  ifrandom: Boolean! # bool
+  duration: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type RefundSuccess @entity(immutable: true) {
+  id: ID! # bytes32
+  token_address: Bytes! # address
+  remaining_balance: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
 }
